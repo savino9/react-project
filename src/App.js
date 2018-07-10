@@ -7,6 +7,7 @@ import SearchBox from './SearchBox';
 class App extends Component {
 	constructor(){
 		super()
+		// the state is what changes in an app
 		this.state = {
 			robots:robots,
 			searchField:''
@@ -15,6 +16,7 @@ class App extends Component {
 	onSearchChange = (event) => {
 		this.setState({searchField: event.target.value})
 	}
+	// we manage the state in the render function
 	render() {
 		const filteredRobots = this.state.robots.filter(robot => {
 			return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase())
