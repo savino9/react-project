@@ -12,7 +12,10 @@ import registerServiceWorker from './registerServiceWorker';
 import {searchRobots} from './reducers';
 import 'tachyons';
 
+// Middleware
 const logger = createLogger();
+// 
+
 const store = createStore(searchRobots, applyMiddleware(logger))
 
 
