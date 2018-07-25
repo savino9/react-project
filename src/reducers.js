@@ -1,4 +1,9 @@
-import {CHANGE_SEARCH_FIELD} from './constants.js';
+import {
+	CHANGE_SEARCH_FIELD,
+	REQUEST_ROBOTS_PENDING,
+	REQUEST_ROBOTS_SUCCESS,
+	REQUEST_ROBOTS_FAIL
+} from './constants.js'
 
 const initialState = {
 	searchField: ''
