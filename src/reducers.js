@@ -17,3 +17,11 @@ export const searchRobots = (state=initialState, action={}) => {
 			return state;
 	}
 } 
+
+// create new reducer
+export const requestRobots = (state=initialState, action={}) => {
+	switch(){
+		case REQUEST_ROBOTS_PENDING:
+		return 
+	}
+}
