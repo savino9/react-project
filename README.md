@@ -17,3 +17,7 @@ const logger = createLogger();
 ```
 Use the applyMiddleware(logger) function to specify wich actions has to be debugged
 ```
+
+#### Asyncronous Redux 
+npm install redux-thunk then import in the index file thunkMiddleware from redux-thunk;
+create constants -> import them in the constants file, after that write the actions
