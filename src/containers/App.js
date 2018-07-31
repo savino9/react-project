@@ -8,17 +8,21 @@ import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
 
 // connecting Redux 
-import { setSearchField } from '../actions';
+import { setSearchField, requestRobots } from '../actions';
 
 const mapStateToProps = state => {
 	return {
-		searchField: state.searchRobots.searchField
+		searchField: state.searchRobots.searchField,
+		robots: state.requestRobots.robots,
+		isPending: state.requestRobots.isPending,
+		error: state.requestRobots.error
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+		onRequestRobots: () => requestRobots(dispatch)
 	}
 }
 // 
