@@ -22,39 +22,24 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-		onRequestRobots: () => requestRobots(dispatch)
+		onRequestRobots: () => dispatch(requestRobots(dispatch))
 	}
 }
 // 
 
 class App extends Component {
-	constructor(){
-		super()
-		// the state is what changes in an app
-		this.state = {
-			robots:[],
-		}
-	}
-	componentDidMount(){
-		fetch('https://jsonplaceholder.typicode.com/users')
-			.then(response=> response.json())
-			.then(users=>{this.setState({robots:users})})
+	componentDidMount() {
+		this.props.onRequestRobots();
 	}
 
 	// we manage the state in the render function
 	render() {
-		const { robots } = this.state;
-		const {searchField, onSearchChange } = this.props;
+		const {searchField, onSearchChange, robots, isPending } = this.props;
 		const filteredRobots = robots.filter(robot => {
 			return robot.name.toLowerCase().includes(searchField.toLowerCase())
 		})
-		return !robots.length ? 
-			(
-				<div className='tc f1'>
-				<h1>Loading</h1>
-				</div>
-			)
-			: 
+		return isPending ? 
+			<h1>Loading</h1> : 
 			(
 				<div className='tc'>
 				<h1 className='f1'>Robot Friends</h1>
