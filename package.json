@@ -17,5 +17,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "My first App using React.js + Redux; Simple App that grab data from jsonplaceholder, input text area that filter the array of robots by name.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savino9/react-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savino9/react-project/issues"
+  },
+  "homepage": "https://github.com/savino9/react-project#readme"
 }
