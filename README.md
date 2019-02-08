@@ -1,3 +1,5 @@
+% React 
+
 ### React + Redux
 
 My first App using React.js + Redux;
